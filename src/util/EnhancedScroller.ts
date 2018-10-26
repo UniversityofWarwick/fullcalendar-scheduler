@@ -280,32 +280,7 @@ ListenerMixin.mixInto(EnhancedScroller)
 // ----------------------------------------------------------------------------------------------
 
 function detectRtlScrollSystem() {
-  const el = $(`\
-<div style=" \
-position: absolute; \
-top: -1000px; \
-width: 1px; \
-height: 1px; \
-overflow: scroll; \
-direction: rtl; \
-font-size: 100px; \
-">A</div>\
-`).appendTo('body')
-  const node = el[0]
-  const system = (function() {
-    if (node.scrollLeft > 0) {
-      return 'positive'
-    } else {
-      node.scrollLeft = 1
-      if (node.scrollLeft > 0) {
-        return 'reverse'
-      } else {
-        return 'negative'
-      }
-    }
-  })()
-  el.remove()
-  return system
+  return 'positive';
 }
 
 $(function() {

@@ -1,4 +1,4 @@
-import { EventRenderer, htmlEscape, cssToStr } from 'fullcalendar'
+import { EventRenderer, htmlEscape } from 'fullcalendar'
 import ScrollFollowerSprite from '../../util/ScrollFollowerSprite'
 
 
@@ -145,7 +145,7 @@ export default class TimelineEventRenderer extends EventRenderer {
 
     const timeText = this.getTimeText(seg.footprint)
 
-    return '<a class="' + classes.join(' ') + '" style="' + cssToStr(this.getSkinCss(seg.footprint.eventDef)) + '"' +
+    return '<a class="' + classes.join(' ') + '"' +
       (eventDef.url ?
         ' href="' + htmlEscape(eventDef.url) + '"' :
         '') +

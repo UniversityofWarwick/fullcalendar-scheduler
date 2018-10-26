@@ -10,9 +10,11 @@
   "license": "SEE LICENSE IN LICENSE.md",
   "copyright": "2018 Adam Shaw",
   "dependencies": {
-    "fullcalendar": "~3.9.0",
     "jquery": "2 - 3",
     "moment": "^2.20.1"
+  },
+  "optionalDependencies": {
+    "fullcalendar": "~3.9.0"
   },
   "version": "1.9.4",
   "releaseDate": "2018-03-28",

@@ -1464,7 +1464,7 @@ var TimelineEventRenderer = /** @class */ (function (_super) {
         var classes = this.getSegClasses(seg, isDraggable, isResizableFromStart || isResizableFromEnd);
         classes.unshift('fc-timeline-event', 'fc-h-event');
         var timeText = this.getTimeText(seg.footprint);
-        return '<a class="' + classes.join(' ') + '" style="' + fullcalendar_1.cssToStr(this.getSkinCss(seg.footprint.eventDef)) + '"' +
+        return '<a class="' + classes.join(' ') + '"' +
             (eventDef.url ?
                 ' href="' + fullcalendar_1.htmlEscape(eventDef.url) + '"' :
                 '') +
@@ -4212,24 +4212,7 @@ fullcalendar_1.ListenerMixin.mixInto(EnhancedScroller);
 // Horizontal Scroll System Detection
 // ----------------------------------------------------------------------------------------------
 function detectRtlScrollSystem() {
-    var el = $("<div style=\" position: absolute; top: -1000px; width: 1px; height: 1px; overflow: scroll; direction: rtl; font-size: 100px; \">A</div>").appendTo('body');
-    var node = el[0];
-    var system = (function () {
-        if (node.scrollLeft > 0) {
-            return 'positive';
-        }
-        else {
-            node.scrollLeft = 1;
-            if (node.scrollLeft > 0) {
-                return 'reverse';
-            }
-            else {
-                return 'negative';
-            }
-        }
-    })();
-    el.remove();
-    return system;
+    return 'positive';
 }
 $(function () {
     rtlScrollSystem = detectRtlScrollSystem();
